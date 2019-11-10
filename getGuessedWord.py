@@ -1,6 +1,6 @@
 def getGuessedWord(secretWord, lettersGuessed):
-    x = secretWord
-    for n in range(len(secretWord)):
-        if secretWord[n] not in str(lettersGuessed):
-            x = x.replace(secretWord[n], '_ ')
-    return x
+    a = secretWord
+    for b in secretWord:
+        if b not in str(lettersGuessed):
+            a = a.replace(b, '_ ')
+    return a

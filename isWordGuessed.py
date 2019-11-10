@@ -1,8 +1,5 @@
 def isWordGuessed(secretWord, lettersGuessed):
-    correctLetter = 0
-    for n in range(len(secretWord)):
-        if secretWord[n] in lettersGuessed:
-            correctLetter += 1
-        if correctLetter == n:
+    for a in secretWord:
+        if a not in lettersGuessed:
             return False
     return True

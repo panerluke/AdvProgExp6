@@ -1,7 +1,7 @@
 def getAvailableLetters(lettersGuessed):
     import string
-    x = string.ascii_lowercase
-    for n in range(len(string.ascii_lowercase)):
-        if string.ascii_lowercase[n] in str(lettersGuessed):
-            x = x.replace(string.ascii_lowercase[n], '')
-    return x
+    a = string.ascii_lowercase
+    for b in string.ascii_lowercase:
+        if b in str(lettersGuessed):
+            a = a.replace(b, '')
+    return a
