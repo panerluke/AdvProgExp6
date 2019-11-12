@@ -3,8 +3,7 @@ def Hangaroo(secretWord):
     print('Welcome to the game of Hangaroo!')
     lettersGuessed = ['']
     mistakes = 0
-    gameCondition = isWordGuessed(secretWord, lettersGuessed)
-    while not gameCondition:
+    while not isWordGuessed(secretWord, lettersGuessed):
         print('\nMistakes: ', mistakes,'\nMissing letters: \n', getGuessedWord(secretWord, lettersGuessed))
         guess = input('Input your letter of guess: ')
         guessInLowerCase = guess.lower()
@@ -12,8 +11,8 @@ def Hangaroo(secretWord):
             lettersGuessed.append(guessInLowerCase)
             if guessInLowerCase not in secretWord:
                 mistakes += 1
-            remLet = lettersGuessed
-            gameCondition = isWordGuessed(secretWord, lettersGuessed)
-        elif guessInLowerCase in remLet:
+                if mistakes == 4:
+                    return print('You lost. The kangaroo is hanged  :c')
+        else:
             print('\nYou already guessed that letter. Try again!')
     return print('\nSecret Word:', getGuessedWord(secretWord, lettersGuessed),'\nCongratulations, you won!')
